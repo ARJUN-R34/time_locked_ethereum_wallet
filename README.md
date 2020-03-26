@@ -16,7 +16,7 @@ Now follow these steps to run the project.
 
 Now open your browser and go to,
 
-[localhost](127.0.0.1:8080) .
+`127.0.0.1:8080` .
 
 You need to have metamask installed to use this project. If not installed, click on the link below,
 
