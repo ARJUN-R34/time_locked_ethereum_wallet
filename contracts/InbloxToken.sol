@@ -4,20 +4,20 @@ import './SafeMath.sol';
 import './ERC20.sol';
 
 /**
- * @title Toptal token
+ * @title Inblox token
  */
 
-contract ToptalToken is ERC20 {
+contract InbloxToken is ERC20 {
   using SafeMath for uint256;
 
   mapping(address => uint256) balances;
   mapping (address => mapping (address => uint256)) internal allowed;
 
-  string public name = "Toptal Token";
-  string public symbol = "TTT";
+  string public name = "Inblox Token";
+  string public symbol = "IBT";
   uint256 public decimals = 6;
 
-  function ToptalToken() public {
+  function InbloxToken() public {
     totalSupply = 1000000 * (10 ** decimals);
     balances[msg.sender] = totalSupply;
   }

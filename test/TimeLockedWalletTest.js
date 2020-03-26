@@ -1,5 +1,5 @@
 const TimeLockedWallet = artifacts.require("./TimeLockedWallet.sol");
-const ToptalToken = artifacts.require("./ToptalToken.sol");
+const InbloxToken = artifacts.require("./InbloxToken.sol");
 
 let ethToSend = web3.toWei(1, "ether");
 let someGas = web3.toWei(0.01, "ether");
@@ -83,26 +83,26 @@ contract('TimeLockedWallet', (accounts) => {
         assert(ethToSend == await web3.eth.getBalance(timeLockedWallet.address));
     });
 
-    it("Owner can withdraw the ToptalToken after the unlock date", async () => {
+    it("Owner can withdraw the InbloxToken after the unlock date", async () => {
         //set unlock date in unix epoch to now
         let now = Math.floor((new Date).getTime() / 1000);
         //create the wallet contract 
         let timeLockedWallet = await TimeLockedWallet.new(creator, owner, now);
 
-        //create ToptalToken contract
-        let toptalToken = await ToptalToken.new({from: creator});
+        //create InbloxToken contract
+        let inbloxToken = await InbloxToken.new({from: creator});
         //check contract initiated well and has 1M of tokens
-        assert(1000000000000 == await toptalToken.balanceOf(creator));        
+        assert(1000000000000 == await inbloxToken.balanceOf(creator));        
 
-        //load the wallet with some Toptal tokens
+        //load the wallet with some Inblox tokens
         let amountOfTokens = 1000000000;
-        await toptalToken.transfer(timeLockedWallet.address, amountOfTokens, {from: creator});
-        //check that timeLockedWallet has ToptalTokens
-        assert(amountOfTokens == await toptalToken.balanceOf(timeLockedWallet.address));
+        await inbloxToken.transfer(timeLockedWallet.address, amountOfTokens, {from: creator});
+        //check that timeLockedWallet has InbloxTokens
+        assert(amountOfTokens == await inbloxToken.balanceOf(timeLockedWallet.address));
         //now withdraw tokens
-        await timeLockedWallet.withdrawTokens(toptalToken.address, {from: owner});
+        await timeLockedWallet.withdrawTokens(inbloxToken.address, {from: owner});
         //check the balance is correct
-        let balance = await toptalToken.balanceOf(owner);
+        let balance = await inbloxToken.balanceOf(owner);
         assert(balance.toNumber() == amountOfTokens);
     });
 
