@@ -1,6 +1,25 @@
 # Time Locked Wallets
 
-Please find more details about this project in [this blog post](https://www.toptal.com/ethereum-smart-contract/time-locked-wallet-truffle-tutorial#distinguish-only-choice-engineers).
+## Setup
 
-This ÐApp is deployed on Rinkeby and published with GitHub pages here: https://radek1st.github.io/time-locked-wallets/.
-Note that you will need Metamask or alike to use it.
+clone the repository using,
+
+```git clone https://github.com/ARJUN-R34/time_locked_ethereum_wallet.git```
+
+Now follow these steps to run the project.
+
+```cd time_locked_ethereum_wallet```
+
+```npm install```
+
+```npm start```
+
+Now open your browser and go to,
+
+[localhost](127.0.0.1) .
+
+You need to have metamask installed to use this project. If not installed, click on the link below,
+
+[Metamask](https://metamask.io/) .
+
+Now you can interact with the Dapp.
