@@ -13,10 +13,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "lite-server": "^2.3.0"
+    "lite-server": "^2.6.1"
   },
   "dependencies": {
-    "http-server": "^0.12.1",
+    "http-server": "^0.12.3",
     "solc": "^0.4.18"
   }
 }
